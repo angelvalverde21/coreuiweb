@@ -56,7 +56,7 @@ export class CategoryCreateComponent {
   private formInit(): void {
     this.form = this.fb.group({
       name: ['', [Validators.required]],
-      has_size: ['', [Validators.required]],
+      has_size: [false, [Validators.required]],
       has_color: [true],
       category_id: [null] //No es obligatorio porque sino no se podria crear las categorias padre
     });

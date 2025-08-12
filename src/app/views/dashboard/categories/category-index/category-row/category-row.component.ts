@@ -4,10 +4,11 @@ import { faLink, faEdit, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { ButtonLinkComponent } from '../../../shared/components/buttons/button-link/button-link.component';
 import { NgClass } from '@angular/common';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
+import { RouterModule } from '@angular/router';
+import { CategoryIndexRowDropdownComponent } from '../../CategoryIndexRow/category-index-row-dropdown/category-index-row-dropdown.component';
 @Component({
   selector: 'app-category-row',
-  imports: [ButtonLinkComponent, NgClass, FontAwesomeModule],
+  imports: [ButtonLinkComponent, NgClass, FontAwesomeModule, RouterModule, CategoryIndexRowDropdownComponent],
   templateUrl: './category-row.component.html',
   styleUrl: './category-row.component.scss',
 })

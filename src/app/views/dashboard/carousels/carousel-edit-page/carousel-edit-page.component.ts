@@ -7,7 +7,8 @@ import {
   faPlus,
   faSave,
   faTrash,
-  faLink
+  faLink,
+  faArrowLeft,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   FormBuilder,
@@ -20,25 +21,28 @@ import { ButtonComponent } from '../../shared/components/buttons/button/button.c
 import { Subscription } from 'rxjs';
 import { CarouselService } from '../carousel.service';
 import { GalleryComponent } from '../../shared/components/gallery/gallery.component';
+import { ButtonLinkComponent } from '../../shared/components/buttons/button-link/button-link.component';
+
 @Component({
   selector: 'app-carousel-edit-page',
   imports: [
-        LoadingComponent,
+    LoadingComponent,
     InputGroupComponent,
     ReactiveFormsModule,
     ButtonComponent,
-    GalleryComponent
+    GalleryComponent,
+    ButtonLinkComponent,
   ],
   templateUrl: './carousel-edit-page.component.html',
-  styleUrl: './carousel-edit-page.component.scss'
+  styleUrl: './carousel-edit-page.component.scss',
 })
 export class CarouselEditPageComponent {
-
-    faPenToSquare = faPenToSquare;
+  faPenToSquare = faPenToSquare;
   faPlus = faPlus;
   faSave = faSave;
   faTrash = faTrash;
   faLink = faLink;
+  faArrowLeft = faArrowLeft;
 
   form!: FormGroup;
 
@@ -47,7 +51,6 @@ export class CarouselEditPageComponent {
     private _route: ActivatedRoute,
     private _carousel: CarouselService,
     private _router: Router
-  
   ) {}
 
   disabledButton: boolean = true;
@@ -66,14 +69,12 @@ export class CarouselEditPageComponent {
     });
   }
 
-  subscriptionComponent! : Subscription;
-  
+  subscriptionComponent!: Subscription;
+
   ngOnDestroy(): void {
-  
-    if(this.subscriptionComponent){
+    if (this.subscriptionComponent) {
       this.subscriptionComponent.unsubscribe();
     }
-  
   }
 
   ngOnInit(): void {
@@ -128,31 +129,28 @@ export class CarouselEditPageComponent {
     });
   }
 
-  archivar(){
-
+  archivar() {
     Swal.fire({
       title: '¿Estás seguro?',
       text: 'Esta acción archivará la marca y no podrá ser deshecha.',
       icon: 'warning',
-      confirmButtonColor: "#d33",
+      confirmButtonColor: '#d33',
       showCancelButton: true,
       confirmButtonText: 'Sí, archivar',
-      cancelButtonText: 'Cancelar'
+      cancelButtonText: 'Cancelar',
     }).then((result) => {
       if (result.isConfirmed) {
         this._carousel.destroy(this.carousel_id).subscribe({
           next: (resp: any) => {
             Swal.fire('Archivado', 'La marca ha sido archivada.', 'success');
-            this._router.navigate(['/','carousels']);
-            
+            this._router.navigate(['/', 'carousels']);
           },
           error: (error: any) => {
             Swal.fire('Error', 'No se pudo archivar la marca.', 'error');
             console.error(error);
-          }
+          },
         });
       }
     });
   }
-  
 }

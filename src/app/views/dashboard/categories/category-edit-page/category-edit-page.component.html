@@ -6,7 +6,7 @@
 
     <div class="card mb-3">
 
-        <div class="card-header bg-dark py-3 text-white d-flex justify-content-between align-items-center">
+        <div class="card-header bg-primary py-3 text-white d-flex justify-content-between align-items-center">
             Editar Categoria
             <app-button-link [icon]="faArrowLeft" color="light" colortext="text-white "
                 [path]="['categories']">Volver</app-button-link>
@@ -33,8 +33,8 @@
 
                 <div class="controls d-flex justify-content-between align-items-center">
 
-                    <app-button color="dark" [icon]="faSave" [disabled]="disabledButton" [loadingIcon]="loadingIcon"
-                        (action)="update()">Actualizar</app-button>
+                    <app-button color="primary" [icon]="faSave" [disabled]="disabledButton" [loadingIcon]="loadingIcon"
+                        (action)="update()">Actualizar Categoria</app-button>
 
                     <app-button color="danger" colortext="white" [icon]="faTrash" [disabled]="disabledButton"
                         [loadingIcon]="loadingIcon" (action)="archivar()">Borrar</app-button>

@@ -1,0 +1,14 @@
+<div ngbDropdown class="d-inline-block">
+    <button type="button" class="btn btn-success text-white" id="dropdownBasic1" ngbDropdownToggle>
+        Acciones
+    </button>
+    <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+
+        <button ngbDropdownItem [routerLink]="['/', 'brands', brand.id]" routerLinkActive="router-link-active" >
+            <fa-icon [icon]="faEdit" class="me-2"></fa-icon>
+            Editar</button>
+        <button ngbDropdownItem [routerLink]="['/', 'brands', 'slug', brand.slug]" routerLinkActive="router-link-active" >
+            <fa-icon [icon]="faLink" class="me-2"></fa-icon>
+            Mostrar</button>
+    </div>
+</div>

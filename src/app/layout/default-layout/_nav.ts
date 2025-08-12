@@ -6,10 +6,10 @@ export const navItems: INavData[] = [
     name: 'Dashboard',
     url: (environment.showStoreNameInSlug) ? `/${environment.storeName}/dashboard` : '/dashboard',
     iconComponent: { name: 'cil-speedometer' },
-    badge: {
-      color: 'info',
-      text: 'NEW'
-    }
+    // badge: {
+    //   color: 'info',
+    //   text: 'NEW'
+    // }
   },
   {
     title: true,
@@ -46,11 +46,11 @@ export const navItems: INavData[] = [
         url: (environment.showStoreNameInSlug) ? `/${environment.storeName}/web/carousels` : '/web/carousels',
         icon: 'nav-icon-bullet'
       },
-      {
-        name: 'Ofertas',
-        url: (environment.showStoreNameInSlug) ? `/${environment.storeName}/web/deals` : '/web/deals',
-        icon: 'nav-icon-bullet'
-      },
+      // {
+      //   name: 'Ofertas',
+      //   url: (environment.showStoreNameInSlug) ? `/${environment.storeName}/web/deals` : '/web/deals',
+      //   icon: 'nav-icon-bullet'
+      // },
       // {
       //   name: 'Reporte',
       //   url: (environment.showStoreNameInSlug) ? `/${environment.storeName}/web/reports` : '/web/reports',

@@ -2,14 +2,16 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LoadingComponent } from '../../shared/components/loading/loading.component';
 import { ButtonLinkComponent } from '../../shared/components/buttons/button-link/button-link.component';
 import { faPlus, faLink, faEdit } from '@fortawesome/free-solid-svg-icons';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
 import { BrandService } from '../brand.service';
 import { Subscription } from 'rxjs';
+import { NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrandIndexRowDropdownComponent } from '../BranIndexRow/brand-index-row-dropdown/brand-index-row-dropdown.component';
 
 @Component({
   selector: 'app-brand-index-page',
-  imports: [LoadingComponent, ButtonLinkComponent],
+  imports: [LoadingComponent, ButtonLinkComponent, RouterModule, NgbDropdownModule, BrandIndexRowDropdownComponent],
   templateUrl: './brand-index-page.component.html',
   styleUrl: './brand-index-page.component.scss'
 })
